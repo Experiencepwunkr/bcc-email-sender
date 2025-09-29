@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multi-User Mailer</title>
+</head>
+<body>
+  <h2>📧 Send Email</h2>
+  <form action="/send" method="POST" enctype="multipart/form-data">
+    <h3>SMTP Settings</h3>
+    <label>SMTP Host:</label><input type="text" name="smtpHost" required><br>
+    <label>SMTP Port:</label><input type="number" name="smtpPort" value="587" required><br>
+    <label>SMTP User:</label><input type="email" name="smtpUser" required><br>
+    <label>SMTP Pass:</label><input type="password" name="smtpPass" required><br>
+
+    <h3>Email Details</h3>
+    <label>From:</label><input type="email" name="from" required><br>
+    <label>To:</label><input type="email" name="to" required><br>
+    <label>Subject:</label><input type="text" name="subject" required><br>
+    <label>Message Body (HTML allowed):</label><br>
+    <textarea name="message" rows="8" cols="50" required></textarea><br>
+
+    <h3>BCC Options</h3>
+    <label>Paste BCC Emails (comma/space separated):</label><br>
+    <textarea name="bccManual" rows="4" cols="50"></textarea><br>
+    <label>Or Upload CSV/TXT:</label>
+    <input type="file" name="bccFile" accept=".csv,.txt"><br><br>
+
+    <button type="submit">Send Email</button>
+  </form>
+</body>
+</html>
